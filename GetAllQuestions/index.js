@@ -4,6 +4,6 @@ module.exports = async function(context, req) {
   context.log("Request for all questions");
 
   context.res = {
-    body: questions
+    body: questions.sort()
   };
 };
