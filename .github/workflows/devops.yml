@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
-      uses: actions/checkout@master
+        uses: actions/checkout@master
 
       - name: "Setup Node.js"
         uses: actions/setup-node@v1
@@ -24,9 +24,7 @@ jobs:
         run: npm install --production
  
       - name: "Login via Azure CLI"
-        uses: Azure/login@v1
-        with
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+        uses: Azure/login@v1 with creds:${{ secrets.AZURE_CREDENTIALS }}
       
       - name: "Run Azure Fonctions Action"
         uses: Azure/functions-action@v1
